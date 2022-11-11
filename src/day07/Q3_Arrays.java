@@ -1,26 +1,39 @@
 package day07;
 
 public class Q3_Arrays {
+    //Create an array of 5 floats and calculate their sum.
     public static void main(String[] args) {
-
-        float []input={1.0f,2.0f,3.0f,4.0f,5.0f};
-
-        float toplam=0;
-
-        for (int i = 0; i <input.length ; i++) {
-
-            toplam+=input[i];
+        float[] sayilar = {1.0f,2.0f,3.0f,4.0f,5.0f};
+        float toplam = 0;
+        System.out.println("********************* FOR COZUMU **********************");
+        for (int i = 0; i < sayilar.length; i++) {
+            toplam+=sayilar[i];
         }
-        System.out.println(toplam);
-
-
-        System.out.println("***************WHILE COZÜMÜ*******************");
-
+        System.out.println("Toplam = " + toplam);
+        System.out.println("********************* WHILE COZUMU 1 **********************");
         toplam=0;
-        int index = 0;
-        while (index<input.length){
-
+        int index = sayilar.length - 1;
+        while(index>=0){
+            toplam+=sayilar[index];
+            index--;
         }
-
+        System.out.println("Toplam = " + toplam);
+        System.out.println("********************* WHILE COZUMU 2 **********************");
+        toplam=0;
+        index = 0;
+        while(index< sayilar.length){
+            toplam+=sayilar[index];
+            index++;
+        }
+        System.out.println("Toplam = " + toplam);
+        System.out.println("********************* DO WHILE COZUMU **********************");
+        toplam=0;
+        index = 0;
+        do{
+            toplam+=sayilar[index];
+            index++;
+        }while(index < sayilar.length);
+        System.out.println("Toplam = " + toplam);
     }
 }
+
